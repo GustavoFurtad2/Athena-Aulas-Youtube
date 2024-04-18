@@ -28,40 +28,42 @@ let nave = new Animation([
     new Image("assets/nave/3.png")
 ], 8)
 
+let tiros = [] // armazenar os tiros
+
 class Tiro {
     x = 0
     y = 0
-    velocidade = 0
+    speed = 0
 
-    constructor(x, y, velocidade) {
+    constructor(x, y, speed) {
         this.x = x
         this.y = y
-        this.velocidade = velocidade
+        this.speed = speed
     }
 
     draw() {
-        this.y = this.y - this.velocidade
-        Draw.rect(this.x, this.y, 3, 30, Color.new(0, 0, 255))
+        this.y = this.y - this.speed
+        Draw.rect(this.x, this.y, 5, 35, Color.new(0, 0, 255))
     }
 }
 
-let tiros = []
 let Pad = Pads.get()
 let OldPad = Pad
 
 while (true) {
     Screen.clear()
-    nave.draw(300, 350)
     OldPad = Pad
     Pad = Pads.get()
-    if (Pads.check(Pad, Pads.CROSS) && !Pads.check(OldPad, Pads.CROSS)) {
-        tiros[tiros.length + 1] = new Tiro(320, 340, 4)
-        tiros[tiros.length + 1] = new Tiro(360, 340, 4)
-    }
 
-    tiros.forEach(tiro => {
-        tiro.draw()
-    })
-    
+    if (Pads.check(Pad, Pads.CROSS) & !Pads.check(OldPad, Pads.CROSS)) {
+       tiros[tiros.length + 1] = new Tiro(320, 340, 10)
+       tiros[tiros.length + 1] = new Tiro(360, 340, 10)
+    }
+    nave.draw(300, 350)
+    tiros.forEach(
+        function(tiro) {
+            tiro.draw()
+        }
+    )
     Screen.flip()
 }
