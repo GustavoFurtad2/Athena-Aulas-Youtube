@@ -1,8 +1,11 @@
-let font = new Font();
+let dia = 11
+let mes = "Agosto"
+let ano = 2024
+
+console.log("Hoje e dia " + dia " de " + mes + " do ano de " + ano)
 
 while (true) {
     Screen.clear();
 
-    font.print(0, 100, "Esta é uma mensagem para o youtube!");
     Screen.flip();
 }
