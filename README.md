@@ -1,1 +1,1 @@
-Aulas de Javascript e Athena Enviroment no Youtube https://www.youtube.com/channel/UCCjF3u3eh3NRYOiMdTT7bcQ
+Aulas de homebrew Playstation 2 sobre a Engine [Athena](https://github.com/DanielSant0s/AthenaEnv) e Javascript no [canal](https://youtu.be/HuAisqFxXow?si=ZclioqStyEwP-EZz)
